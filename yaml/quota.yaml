@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+	name: demostest
+spec:
+	selector:
+		matchLabels:
+			run: demostest
+	hard:
+		pods: "100"

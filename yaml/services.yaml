@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demostest
+  labels:
+    run: demostest
+spec:
+  ports:
+    - protocol: TCP
+      port: 9999
+      targetPort: 8888
+  selector:
+    run: demostest
+  type: LoadBalancer

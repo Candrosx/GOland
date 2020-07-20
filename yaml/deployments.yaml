@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demostest
+  labels:
+    run: demostest
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: demostest
+  template:
+    metadata:
+      labels:
+        run: demostest
+    spec:
+      containers:
+      - name: demostest
+        image: candrosx/goland:tests
+        ports:
+        - containerPort: 8888
