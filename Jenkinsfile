@@ -1,15 +1,32 @@
 pipeline {
     agent any
+    environment {
+        IMAGE       = 'candrosx/goland:tests'
+        SELECTOR    = 'demostest'
+        OUTERPORT   = 9999
+        INNERPORT   = 8888
+        K8SNAME     = 'demostest'
+    }
     stages {
-        stage('First step') {
+        stage('Delete old') {
             steps {
-                echo '123'
+                sh("kubectl delete all --selector run=$SELECTOR")
+                sh("docker image rm $IMAGE -f")
             }
         }
-        stage('Second step') {
+        stage('Create docker image') {
             steps {
-                sh 'ls -l /'
+                dir('docker') {
+                    sh 'docker image build .'
+                }
             }
-        }        
+        }
+        stage('Kubectl apply') {
+            steps {
+                dir('yaml')
+                sh 'kubectl apply -f deployments.yaml'
+                sh 'kubectl apply -f services.yaml'
+            }
+        }
     }
 }
