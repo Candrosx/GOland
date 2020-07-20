@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('First step') {
             steps {
-                echo '12'
+                echo '123'
             }
         }
         stage('Second step') {
