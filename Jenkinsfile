@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('First step') {
             steps {
-                Hostname
+                hostname
             }
         }
         stage('Second step') {
