@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Second step') {
             steps {
-                ls -l /
+                sh 'ls -l /'
             }
         }        
     }
