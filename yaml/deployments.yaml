@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: demostest
-        image: busybox:1.28
+        image: candrosx/goland:tests
         ports:
         - containerPort: 8888
