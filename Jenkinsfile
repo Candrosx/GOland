@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        label 'master'
+    }
+    options {
+        timestamps()
+    }
     environment {
         IMAGE       = 'candrosx/goland:tests'
         SELECTOR    = 'demostest'
