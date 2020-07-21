@@ -1,7 +1,7 @@
 FROM golang:1.14-alpine AS build
 
-#WORKDIR src/
-COPY /src/main.go /src/
+WORKDIR /src/
+COPY ./main.go /src/
 RUN CGO_ENABLED=0 go build -o /bin/demos
 
 FROM busybox:1.28
