@@ -22,15 +22,15 @@ pipeline {
         stage('Create docker image') {
             steps {
                 dir('docker') {
-                    sh 'docker image build -t $IMAGE .'
+                    sh("docker image build -t $IMAGE .")
                 }
             }
         }
         stage('Kubectl apply') {
             steps {
                 dir('yaml')
-                sh 'kubectl apply -f deployments.yaml'
-                sh 'kubectl apply -f services.yaml'
+                sh("kubectl apply -f deployments.yaml")
+                sh("kubectl apply -f services.yaml")
             }
         }
     }
