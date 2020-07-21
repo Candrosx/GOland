@@ -2,7 +2,9 @@ pipeline {
     agent {
         label 'master'
     }
+    triggers { pollSCM('* * * * *')}
     options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
     environment {
@@ -22,7 +24,7 @@ pipeline {
         stage('Create docker image') {
             steps {
                 dir('docker') {
-                    sh("docker image build -t $IMAGE .")
+                    sh("docker build -t $IMAGE .")
                 }
             }
         }
