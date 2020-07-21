@@ -22,7 +22,7 @@ pipeline {
         stage('Create docker image') {
             steps {
                 dir('docker') {
-                    sh 'docker image build .'
+                    sh 'docker image build -t $IMAGE .'
                 }
             }
         }
