@@ -33,6 +33,7 @@ pipeline {
                 dir('yaml') {
                     sh("kubectl apply -f deployments.yaml")
                     sh("kubectl apply -f services.yaml")
+                    sh("kubectl apply -f config.yaml")
                 }
             }
         }
