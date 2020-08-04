@@ -1,17 +1,17 @@
 apiVersion: v1
-  kind: Config
-  preferences: {}
-  clusters:
-    - cluster:
-      name: candro-k8s
-  users:
-    - name: developer
-  contexts:
-    - context:
-      name: dev
-    - context:
-      name: staging
-    - context:
-      name: prod
-    - context:
-      name: default
+kind: Config
+preferences: {}
+clusters:
+  - cluster:
+    name: candro-k8s
+users:
+  - name: developer
+contexts:
+  - context:
+    name: dev
+  - context:
+    name: staging
+  - context:
+    name: prod
+  - context:
+    name: default
