@@ -6,7 +6,7 @@ spec:
   limits:
   - type: Container
     max:
-    cpu: "500m"
+      cpu: "500m"
       memory: "1Gi"
     default:
       cpu: "100m"
