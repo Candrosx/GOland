@@ -6,7 +6,7 @@ RUN CGO_ENABLED=0 go build -o /bin/demos
 
 FROM alpine:3.7
 COPY --from=build /bin/demos /bin/demos
-RUN apt-get update && apt-get install -y vim
+RUN apk add vim
 #COPY --from=busybox:1.28 /bin/busybox /bin/busybox
 ENTRYPOINT ["/bin/demos"]
 #ENTRYPOINT ["/bin/busybox"]
