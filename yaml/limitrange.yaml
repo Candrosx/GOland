@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: LimitRange
 metadata:
-	name: demostest
+    name: demostest
 spec:
-	selector:
-		matchLabels:
-			run: demostest
-	limits:
-	- default:
-		cpu: "200m"
-		memory: "256Mi"
-	defaultRequest:
-		cpu: "100m"
-		memory: "128Mi"
-	type: Container
+    selector:
+        matchLabels:
+            run: demostest
+    limits:
+    - default:
+        cpu: "200m"
+        memory: "256Mi"
+    defaultRequest:
+        cpu: "100m"
+        memory: "128Mi"
+    type: Container

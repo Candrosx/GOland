@@ -31,7 +31,6 @@ pipeline {
         stage('Kubectl apply') {
             steps {
                 dir('yaml') {
-
                     sh("kubectl apply -f deployments.yaml")
                     sh("kubectl apply -f services.yaml")
                     sh("kubectl apply -f limitrange.yaml")
