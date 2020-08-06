@@ -4,8 +4,7 @@ metadata:
   name: demostest
 spec:
   selector:
-    matchLabels:
-      run: demostest
+    run: demostest
   limits:
   - type: Container
     default:
