@@ -1,15 +1,16 @@
 apiVersion: v1
 kind: LimitRange
 metadata:
-  name: demostest
+  name: limit-range-default
 spec:
-  selector:
-    run: demostest
   limits:
   - type: Container
+    max:
+	  cpu: "500m"
+	  memory: "1Gi"
     default:
-      cpu: "200m"
+      cpu: "100m"
       memory: "256Mi"
     defaultRequest:
-      cpu: "100m"
+      cpu: "50m"
       memory: "128Mi"
