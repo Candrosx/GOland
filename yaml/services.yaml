@@ -11,6 +11,7 @@ spec:
       targetPort: 8888
   externalIPs:
     - 192.168.1.202
+    - 127.0.0.1
   selector:
     run: demostest
   type: LoadBalancer
