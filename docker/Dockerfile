@@ -6,7 +6,7 @@ RUN CGO_ENABLED=0 go build -o /bin/demos
 
 FROM busybox:1.28
 COPY --from=build /bin/demos /bin/demos
-RUN apt update && apt install -y vim
+RUN apt-get update && apt-get install -y vim
 #COPY --from=busybox:1.28 /bin/busybox /bin/busybox
 ENTRYPOINT ["/bin/demos"]
 #ENTRYPOINT ["/bin/busybox"]
