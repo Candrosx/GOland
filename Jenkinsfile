@@ -33,7 +33,7 @@ pipeline {
                 dir('yaml') {
                     sh("kubectl apply -f deployments.yaml")
                     sh("kubectl apply -f services.yaml")
-                    sh("kubectl create -f limitrange.yaml")
+                    sh("kubectl apply -f limitrange.yaml")
                     sh("kubectl apply -f quota.yaml")
                 }
             }

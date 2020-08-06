@@ -1,10 +1,7 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: demostest
+  name: resource-quota-default
 spec:
-  selector:
-    matchLabels:
-      run: demostest
   hard:
     pods: "10"
